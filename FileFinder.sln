@@ -4,8 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{54CDEC22-FA12-4EDC-8E6C-CFFFC168D745}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{FC2195D1-833E-492D-AE90-522CF58D380D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{A1EB08A4-9BE1-4253-969D-0220B033FAB3}"
 EndProject
@@ -33,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileFinder.Domain.Core", "F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileFinder.Infrastructure.Bus", "FileFinder.Infrastructure.Bus\FileFinder.Infrastructure.Bus.csproj", "{6BF24518-856E-4651-9F18-C78A7B467E50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileFinder.Infrastructure.Logger", "FileFinder.Infrastructure.Logger\FileFinder.Infrastructure.Logger.csproj", "{6277DEF8-65D5-4EA9-8856-97132ACB7A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileFinder.Infrastructure.Logger", "FileFinder.Infrastructure.Logger\FileFinder.Infrastructure.Logger.csproj", "{6277DEF8-65D5-4EA9-8856-97132ACB7A89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,7 +75,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FC2195D1-833E-492D-AE90-522CF58D380D} = {54CDEC22-FA12-4EDC-8E6C-CFFFC168D745}
 		{2DC07041-9531-400F-968A-0C465082C330} = {A1EB08A4-9BE1-4253-969D-0220B033FAB3}
 		{4F1B46E1-4CBF-4580-8A3B-9C1468F1B3C5} = {A1EB08A4-9BE1-4253-969D-0220B033FAB3}
 		{DEA06279-7290-45ED-9AC6-51DC4AE5F363} = {A1EB08A4-9BE1-4253-969D-0220B033FAB3}
