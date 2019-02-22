@@ -10,5 +10,6 @@ namespace FileFinder.Domain.Repositories
         IEnumerable<Document> SearchFileByContent(string content);
         void IndexFile(Document file);
         IEnumerable<Document> SearchHighlightFileByContent(string content);
+        long GetCountOfDocuments();
     }
 }

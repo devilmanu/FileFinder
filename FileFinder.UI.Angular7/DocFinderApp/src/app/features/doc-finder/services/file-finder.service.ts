@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IFileFindByTextResponse } from 'src/app/models/FileFindByTextResponse';
 import { environment } from '../../../../environments/environment'
+import { IDocumentCountResponse } from 'src/app/models/DocumentCountResponse';
 
 @Injectable()
 export class FileFinderService {
@@ -18,5 +19,9 @@ export class FileFinderService {
     const formData = new FormData();
     formData.append(name, value, fileName);
     return this.http.post(`${environment.apiUrl}/${uuid}`, formData, {reportProgress : true})
+  }
+
+  getCountDocuments(){
+    return this.http.get<IDocumentCountResponse>(environment.apiUrl + "/file/count")
   }
 }

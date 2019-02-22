@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FileFinder.AppServices.Files.Commands.CreateFile;
+using FileFinder.AppServices.Files.Queries.GetCount;
 using FileFinder.AppServices.Files.Queries.GetFileByText;
 using FileFinder.Infrastructure.Bus.Commands;
 using FileFinder.Infrastructure.Bus.Queries;
@@ -33,6 +34,13 @@ namespace FileFinder.API.Controllers
         public async Task<IActionResult> Get([FromQuery] string content)
         {
             var respose = await _queryBus.Send(new GetFileByTextQuery(content));
+            return Ok(respose);
+        }
+
+        [HttpGet("count")]
+        public async Task<IActionResult> Get()
+        {
+            var respose = await _queryBus.Send(new GetDocumentCountQuery());
             return Ok(respose);
         }
 

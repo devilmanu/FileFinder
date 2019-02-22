@@ -17,6 +17,12 @@ namespace FileFinder.Infrastructure.Presistence.Elastic.Repositories
             _elasticClient = elasticClient;
         }
 
+        public long GetCountOfDocuments()
+        {
+            var searchResponse = _elasticClient.Count<Document>();
+            return searchResponse.Count;
+        }
+
         public void IndexFile(Document file)
         {
             var response = _elasticClient.Index(file, i => i.Index($"file-app-{file.UploadAt.Year}")
@@ -56,6 +62,15 @@ namespace FileFinder.Infrastructure.Presistence.Elastic.Repositories
                   .Operator(Operator.And)
                   .Fuzziness(Fuzziness.Auto)
                 )
+
+              //.Bool(b => b
+              //    .Must(m => m
+              //        .Term(t => t
+              //            .Field(f => f.Content)
+              //            .Value(content)
+              //            )
+              //    )
+              //)
 
               //.MatchPhrasePrefix(mp => mp
               //    .Query(content)

@@ -6,6 +6,7 @@ import { startWith, debounceTime, switchMap, map, filter, distinctUntilChanged, 
 import { FileFinderService } from '../../services/file-finder.service';
 import { IFileFindByTextResponse } from 'src/app/models/FileFindByTextResponse';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { IDocumentCountResponse } from 'src/app/models/DocumentCountResponse';
 
 @Component({
   selector: 'app-doc-finder',
@@ -36,11 +37,15 @@ export class DocFinderComponent implements OnInit {
   formData: FormData;
   humanizeBytes: Function;
   dragOver: boolean;
+  countDocuments$: Observable<IDocumentCountResponse>;
   
   constructor(private fileFinderService : FileFinderService) {
    }
 
    ngOnInit() {
+
+    this.countDocuments$ = this.fileFinderService.getCountDocuments()
+
      this.searchCtrl.valueChanges.pipe(
       debounceTime(400),
       distinctUntilChanged(),

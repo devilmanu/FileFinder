@@ -5,11 +5,11 @@
       <a class="justify-content-lg-between icon" (click)="openSearchSidebar()">
         <i class="fa fa-search fa-3x mt-3"></i>
       </a>
-      <a class="justify-content-lg-between icon" (click)="openUploadSidebar()">
+      <!-- <a class="justify-content-lg-between icon" (click)="openUploadSidebar()">
         <i class="fa fa-upload fa-3x mt-3"></i>
-      </a>
+      </a>-->
     </div>
-    <p class="documents-count mt-5">We stored <strong>1000</strong> documents</p>
+    <p class="documents-count mt-5">We stored <strong>{{(countDocuments$ | async)?.count}}</strong> documents</p>
   </main>
 
   <ng-sidebar [(opened)]="uploadSidebarOpened" [position]="'right'" [sidebarClass]="'sidebar-upload'">

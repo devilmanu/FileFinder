@@ -10,6 +10,7 @@ namespace FileFinder.Domain.Entities
         public Guid Id { get; set; }
         public DateTimeOffset UploadAt { get; set; }
         public string ImageUrl { get; set; }
+        [Text(Analyzer = "standard")]
         public string Content { get; set; }
         public Attachment Attachment { get; set; }
         public IEnumerable<string> Highlights { get; set; }

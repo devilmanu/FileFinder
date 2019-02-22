@@ -17,10 +17,10 @@ namespace FileFinder.Infrastructure.Presistence.Elastic.Extensions
             var client = scope.ServiceProvider.GetService<IElasticClient>();
             var logger = scope.ServiceProvider.GetService<ILogger<ElasticClient>>();
 
-            if (!client.IndexTemplateExists("file-template").Exists)
-            {
+            //if (!client.IndexTemplateExists("file-template").Exists)
+           // {
                 CreateIndexTodoAppTemplate(client);
-            };
+            //};
             return webHost;
         }
 
